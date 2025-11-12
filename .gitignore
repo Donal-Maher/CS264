@@ -1,0 +1,11 @@
+# Build / IDE
+build/
+*.o
+*.out
+*.exe
+*.dSYM/
+.vscode/
+.DS_Store
+
+# C++ specifics
+*.obj
