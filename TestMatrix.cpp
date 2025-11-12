@@ -3,11 +3,12 @@
 using namespace MatrixSpace;
 int main() {
     cout<<"----m x n constructor test cases----"<<endl;
-    //Test cases for m x n matrix filled with 0s
+    // Test cases for m x n matrix filled with 0s
     Matrix m1(1,1);
     cout<<"1 x 1 matrix"<<endl<< m1.toStr()<<endl;
     Matrix m2(3,5);
-    cout<<"3 x 5 matrix" << endl << m2.toStr()<<endl;
+    cout<<"3 x 5 matrix" << endl << m2.toStr()<<endl; 
+    
 
     cout<<"----Copy constructor test case----"<<endl;
     //Test case for copy function
@@ -15,7 +16,7 @@ int main() {
     cout<<"m2: " << endl << m2.toStr() << endl;
     cout<<"mCopy: " << endl << mCopy.toStr() << endl;
     mCopy.set(0,0,7);
-    cout<<"set first elemetn of mCopy = 7" << endl;
+    cout<<"set first element of mCopy = 7" << endl;
     cout<<"m2: " << endl << m2.toStr() << endl;
     cout<<"mCopy: " << endl << mCopy.toStr() << endl;
 
@@ -142,20 +143,35 @@ int main() {
     //Test case 1
     Matrix m3T = ~m3;
     cout<<"m3:" << endl << m3.toStr();
-    cout<<"~m3:" << endl << m3T.toStr();
+    cout<<"~m3:" << endl << m3T.toStr() <<endl;
     //Test case 2
     Matrix m6T = ~m6;
     cout<<"m6:" << endl << m6.toStr();
-    cout<<"~m6:" << endl << m6T.toStr();
+    cout<<"~m6:" << endl << m6T.toStr()<<endl;
 
      //Test cases for matrix operation ==
     cout<<"----== test cases----"<<endl;
+    //Test case 1 (not equal)
     cout<<"m6:" << endl << m6.toStr();
     cout<<"~m6:" << endl << m6T.toStr();
     bool b = m6 == m3T;
     cout<<"m6 == ~m6: " << b << endl; 
     b = m3 == m6;
-
+    //Test case 2 (equal)
+    Matrix m8(2,2);
+    m8.set(0,0,9);
+    m8.set(1,1,27);
+    cout<<endl<<"m8:" << endl << m8.toStr();
+    Matrix m9(2,2);
+    m9.set(0,0,9);
+    m9.set(1,1,27);
+    cout<<"m9:" << endl << m9.toStr();
+    b = m8 == m9;
+    cout<<"m8 == m9: " << b << endl;   
+    //Test case 3
+    cout<<endl<<"m4:" << endl << m4.toStr();
+    b= m4 == m4;
+    cout<<"m4 == m4: " << b << endl;
     //Delete array
     for(int i = 0; i< m; i++) {
         delete [] array1[i];

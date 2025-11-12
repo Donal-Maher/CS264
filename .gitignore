@@ -9,3 +9,6 @@ build/
 
 # C++ specifics
 *.obj
+
+# TestMatrix
+TestMatrix
